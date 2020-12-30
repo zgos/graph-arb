@@ -1,0 +1,415 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "approveTokenToCandyShopArber",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "deadline",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "minTokens",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "slippageParam",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "arbAmt",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "WithArb",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "withCandy",
+        "type": "bool"
+      }
+    ],
+    "name": "EthToTokenSwap",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "numTokensObtained",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "leftProfit",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "numCandy",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokensSold",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "deadline",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "minEth",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "slippageParam",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "arbAmt",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "WithArb",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "withCandy",
+        "type": "bool"
+      }
+    ],
+    "name": "TokenToEthSwap",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "numEthObtained",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "leftProfit",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "numCandy",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_factory",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_factoryV1",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "router",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_governance",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "tokenBrought",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "profit",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "candiesBrought",
+        "type": "uint256"
+      }
+    ],
+    "name": "Report",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "buyAddr",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "sellAddr",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "sellAmt",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "minBuyAmt",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "slippage",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "deadline",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "arbAmt",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "WithArb",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "withCandy",
+        "type": "bool"
+      }
+    ],
+    "name": "swap",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "tokenBrought",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "profit",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "candiesBrought",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount0",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount1",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes",
+        "name": "data",
+        "type": "bytes"
+      }
+    ],
+    "name": "uniswapV2Call",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "stateMutability": "payable",
+    "type": "receive"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "IsDirectionETHToToken",
+        "type": "bool"
+      }
+    ],
+    "name": "calculateAmountForArbitrage",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "truePriceTokenA",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "truePriceTokenB",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "reserveA",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "reserveB",
+        "type": "uint256"
+      }
+    ],
+    "name": "computeProfitMaximizingTrade",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "aToB",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amountIn",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amountSold",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "EtoT",
+        "type": "bool"
+      }
+    ],
+    "name": "getBalance",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "ethBalanceV1",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenBalaceV1",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "ethBalanceV2",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenBalaceV2",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "governance",
+    "outputs": [
+      {
+        "internalType": "contract GovernanceInterface",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
