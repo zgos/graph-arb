@@ -1,12 +1,10 @@
 {
   "name": "@manifoldfinance/chef-arbitrage",
-  "version": "1.0.0-beta.0",
+  "version": "0.1.0",
   "description": "arbitrage contracts",
   "engines": {
     "node": ">=10"
   },
-  "repository": {
-    "type": "git",
   "files": [
     "build",
     "contracts"

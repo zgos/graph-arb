@@ -19,7 +19,7 @@ function getDomainSeparator(name: string, tokenAddress: string) {
         keccak256(toUtf8Bytes(name)),
         keccak256(toUtf8Bytes('1')),
         1,
-        tokenAddress
+        tokenAddress,
       ]
     )
   )
@@ -49,7 +49,7 @@ export async function getApprovalDigest(
             ['bytes32', 'address', 'address', 'uint256', 'uint256', 'uint256'],
             [PERMIT_TYPEHASH, approve.owner, approve.spender, approve.value, nonce, deadline]
           )
-        )
+        ),
       ]
     )
   )

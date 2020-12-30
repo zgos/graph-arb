@@ -66,16 +66,8 @@
     },
     "outputSelection": {
       "*": {
-        "*": [
-          "abi",
-          "evm.bytecode",
-          "evm.deployedBytecode",
-          "evm.methodIdentifiers"
-        ],
-        "": [
-          "id",
-          "ast"
-        ]
+        "*": ["abi", "evm.bytecode", "evm.deployedBytecode", "evm.methodIdentifiers"],
+        "": ["id", "ast"]
       }
     },
     "evmVersion": "istanbul"

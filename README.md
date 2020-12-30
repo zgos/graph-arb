@@ -1,6 +1,3 @@
-# `chef Arbitrage` 
+# `chef Arbitrage`
 
 batch-based arb
-
-
-

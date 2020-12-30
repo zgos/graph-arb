@@ -1,4 +1,4 @@
-import {BuidlerConfig, usePlugin} from '@nomiclabs/buidler/config'
+import { BuidlerConfig, usePlugin } from '@nomiclabs/buidler/config'
 usePlugin('@nomiclabs/buidler-waffle')
 
 const config: BuidlerConfig = {
@@ -7,15 +7,15 @@ const config: BuidlerConfig = {
     evmVersion: 'istanbul',
     optimizer: {
       enabled: true,
-      runs: 999999
-    }
+      runs: 999999,
+    },
   },
-vyper: {
-    version: "0.1.0b9"
+  vyper: {
+    version: '0.1.0b9',
   },
   paths: {
-    artifacts: './build'
-  }
+    artifacts: './build',
+  },
 }
 
 export default config

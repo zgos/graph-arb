@@ -1,8 +1,8 @@
-import {Wallet, Contract} from 'ethers'
-import {Web3Provider} from 'ethers/providers'
-import {deployContract} from 'ethereum-waffle'
+import { Wallet, Contract } from 'ethers'
+import { Web3Provider } from 'ethers/providers'
+import { deployContract } from 'ethereum-waffle'
 
-import {expandTo18Decimals} from './utilities'
+import { expandTo18Decimals } from './utilities'
 
 import UniswapV2Factory from '@uniswap/v2-core/build/UniswapV2Factory.json'
 import IUniswapV2Pair from '@uniswap/v2-core/build/IUniswapV2Pair.json'
@@ -14,7 +14,7 @@ import UniswapV1Factory from '../../build/UniswapV1Factory.json'
 import UniswapV2Migrator from '@uniswap/v2-periphery/build/UniswapV2Migrator.json'
 
 const overrides = {
-  gasLimit: 9500000
+  gasLimit: 9500000,
 }
 
 interface V2Fixture {
@@ -80,6 +80,6 @@ export async function v2Fixture(provider: Web3Provider, [wallet]: Wallet[]): Pro
     migrator,
     WETHExchangeV1,
     pair,
-    WETHPair
+    WETHPair,
   }
 }

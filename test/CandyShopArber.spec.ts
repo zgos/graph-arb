@@ -1,14 +1,14 @@
-import chai, {expect} from 'chai'
-import {MaxUint256} from 'ethers/constants'
-import {BigNumber, bigNumberify, defaultAbiCoder, formatEther} from 'ethers/utils'
-import {solidity, MockProvider, createFixtureLoader, deployContract} from 'ethereum-waffle'
-import {expandTo18Decimals} from './shared/utilities'
-import {v2Fixture} from './shared/fixtures'
+import chai, { expect } from 'chai'
+import { MaxUint256 } from 'ethers/constants'
+import { BigNumber, bigNumberify, defaultAbiCoder, formatEther } from 'ethers/utils'
+import { solidity, MockProvider, createFixtureLoader, deployContract } from 'ethereum-waffle'
+import { expandTo18Decimals } from './shared/utilities'
+import { v2Fixture } from './shared/fixtures'
 import CandyShopArber from '../build/CandyShopArber.json'
 chai.use(solidity)
-import {Contract} from 'ethers'
-import {getWallets} from 'ethereum-waffle'
-import {waffle} from '@nomiclabs/buidler'
+import { Contract } from 'ethers'
+import { getWallets } from 'ethereum-waffle'
+import { waffle } from '@nomiclabs/buidler'
 
 const overrides = {}
 
@@ -31,7 +31,7 @@ describe('CandyShopArber', () => {
   let candyShopArber: Contract
   let V2Router: Contract
 
-  beforeEach(async function() {
+  beforeEach(async function () {
     const fixture = await loadFixture(v2Fixture)
 
     WETH = fixture.WETH
@@ -55,7 +55,7 @@ describe('CandyShopArber', () => {
     await WETHPartner.approve(WETHExchangeV1.address, WETHPartnerAmountV1)
     await WETHExchangeV1.addLiquidity(bigNumberify(1), WETHPartnerAmountV1, MaxUint256, {
       ...overrides,
-      value: ETHAmountV1
+      value: ETHAmountV1,
     })
     // // add liquidity to V2 at a rate of 1 ETH / 200 X
     // const WETHPartnerAmountV2 = expandTo18Decimals(1000)
