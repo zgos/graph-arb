@@ -4,7 +4,7 @@ import { BigNumber, bigNumberify, defaultAbiCoder, formatEther } from 'ethers/ut
 import { solidity, MockProvider, createFixtureLoader, deployContract } from 'ethereum-waffle'
 import { expandTo18Decimals } from './shared/utilities'
 import { v2Fixture } from './shared/fixtures'
-import CandyShopArber from '../build/CandyShopArber.json'
+import KebabArb from '../build/KebabArb.json'
 chai.use(solidity)
 import { Contract } from 'ethers'
 import { getWallets } from 'ethereum-waffle'
@@ -12,7 +12,7 @@ import { waffle } from '@nomiclabs/buidler'
 
 const overrides = {}
 
-describe('CandyShopArber', () => {
+describe('KebabArb', () => {
   // const provider = new MockProvider({
   //   hardfork: 'istanbul',
   //   mnemonic: 'horn horn horn horn horn horn horn horn horn horn horn horn',
@@ -28,7 +28,7 @@ describe('CandyShopArber', () => {
   let WETHPartner: Contract
   let WETHExchangeV1: Contract
   let WETHPair: Contract
-  let candyShopArber: Contract
+  let KebabArb: Contract
   let V2Router: Contract
 
   beforeEach(async function () {
@@ -39,9 +39,9 @@ describe('CandyShopArber', () => {
     WETHExchangeV1 = fixture.WETHExchangeV1
     WETHPair = fixture.WETHPair
     V2Router = fixture.router
-    candyShopArber = await deployContract(
+    KebabArb = await deployContract(
       wallet,
-      CandyShopArber,
+      KebabArb,
       [fixture.factoryV2.address, fixture.factoryV1.address, fixture.router.address],
       overrides
     )
@@ -70,7 +70,7 @@ describe('CandyShopArber', () => {
     // sell for more ETH on V1
     // return ETH to V2
     // const balanceBefore = await provider.getBalance(wallet.address)
-    // await candyShopArber.EthToTokenSwap(WETHPartner.address, MaxUint256, 1, 1, {
+    // await KebabArb.EthToTokenSwap(WETHPartner.address, MaxUint256, 1, 1, {
     //   ...overrides,
     //   value: expandTo18Decimals(2)
     // })
@@ -84,7 +84,7 @@ describe('CandyShopArber', () => {
     // const reservesV2 = (await WETHPair.getReserves()).slice(0, 2)
     // const priceV2 =
     //   WETHPairToken0 === WETHPartner.address ? reservesV2[0].div(reservesV2[1]) : reservesV2[1].div(reservesV2[0])
-    // var balanceOfCandyShop = await provider.getBalance(candyShopArber.address)
+    // var balanceOfCandyShop = await provider.getBalance(KebabArb.address)
     // console.log('candy shop balance', balanceOfCandyShop.toString())
     // console.log('prices', priceV1.toString(), priceV2.toString())
   })
